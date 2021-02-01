@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace auth_x.Controllers
 {
+	[Authorize]
 	public class HomeController : Controller
 	{
 		public ActionResult Index()
@@ -27,6 +28,7 @@ namespace auth_x.Controllers
 			return View();
 		}
 
+		[AllowAnonymous]
 		public ActionResult unauth()
 		{
 			ViewBag.Message = "unauthorized route";
